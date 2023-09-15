@@ -59,23 +59,5 @@ namespace GraphMapper.Common.Local {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Allowed paired edges count.
-        /// </summary>
-        internal static string AllowedPairedEdgesName {
-            get {
-                return ResourceManager.GetString("AllowedPairedEdgesName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Allow loop.
-        /// </summary>
-        internal static string AllowLoopName {
-            get {
-                return ResourceManager.GetString("AllowLoopName", resourceCulture);
-            }
-        }
     }
 }

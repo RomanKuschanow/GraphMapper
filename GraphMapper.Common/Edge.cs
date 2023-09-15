@@ -2,7 +2,7 @@
 using System.Collections.Immutable;
 
 namespace GraphMapper.Common;
-public class Edge :ComponentList, IHaveId
+public class Edge :ComponentList<IEdgeComponent>, IHaveId
 {
     public Guid Id { get; init; }
 
@@ -17,9 +17,6 @@ public class Edge :ComponentList, IHaveId
 
     public void ChangeNodes(Node a, Node b)
     {
-        if (a.Id == b.Id && !Components.Select(c => c.GetType()).Contains(typeof(AllowLoop)))
-            throw new InvalidOperationException("Unable to create a loop");
-
         NodeA = a;
         NodeB = b;
     }

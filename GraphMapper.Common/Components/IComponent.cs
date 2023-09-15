@@ -4,7 +4,6 @@ namespace GraphMapper.Common.Components;
 public interface IComponent
 {
     string Name { get; }
-    ComponentValue Value { get; }
-    ImmutableArray<Type> SupportedTypes { get; }
-    bool CanDuplicated { get; }
+    object Value { get; }
+    Type ValueType { get; }
 }

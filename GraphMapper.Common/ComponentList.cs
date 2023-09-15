@@ -2,15 +2,15 @@
 using System.Collections.Immutable;
 
 namespace GraphMapper.Common;
-public abstract class ComponentList
+public abstract class ComponentList<T> where T : IComponent
 {
-    private readonly List<IComponent> _components = new();
+    private readonly List<T> _components = new();
 
-    public ImmutableList<IComponent> Components => _components.ToImmutableList();
+    public ImmutableList<T> Components => _components.ToImmutableList();
 
-    public void AddComponent(IComponent component)
+    public void AddComponent(T component)
     {
-        if (!_components.Contains(component) && component.SupportedTypes.Contains(GetType()) && (component.CanDuplicated || !_components.Select(c => c.GetType()).Contains(component.GetType())))
+        if (!_components.Contains(component))
             _components.Add(component);
     }
 }

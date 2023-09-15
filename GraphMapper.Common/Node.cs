@@ -2,7 +2,7 @@
 using System.Collections.Immutable;
 
 namespace GraphMapper.Common;
-public class Node :ComponentList, IHaveId
+public class Node : ComponentList<INodeComponent>, IHaveId
 {
     public Guid Id { get; init; }
 
