@@ -1,6 +1,4 @@
-﻿using System.Collections.Immutable;
-
-namespace GraphMapper.Common.Components;
+﻿namespace GraphMapper.Common.Components;
 public interface IComponent
 {
     string Name { get; }

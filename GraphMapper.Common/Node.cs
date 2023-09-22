@@ -1,20 +1,16 @@
 ﻿using GraphMapper.Common.Components;
-using System.Collections.Immutable;
 
 namespace GraphMapper.Common;
 public class Node : ComponentList<INodeComponent>, IHaveId
 {
     public Guid Id { get; init; }
 
-    public Node()
-    {
-        Id = Guid.NewGuid();
-    }
+    public Node() => Id = Guid.NewGuid();
 
-    private Node(List<INodeComponent> components) : base(components) { Id = Guid.NewGuid(); }
+    private Node(List<INodeComponent> components, Guid id) : base(components) => Id = id;
 
     internal Node Clone()
     {
-        return new(_components);
+        return new(_components, Id);
     }
 }
